@@ -53,5 +53,5 @@ This directory contains the RISC-V toolchain used to compile C applications for 
 - Supports **Rocket**, **AndesCore**, and **SiFive** CPUs.
 - Can be used from any directory without requiring a rebuild.
 - Compatible only with **AlmaLinux** (not CentOS).
-- This toolchain can be accesses from this "https://gitsnps.internal.synopsys.com/haps/jeta.git"("jeta_cairo_team" branch).
+- This toolchain can be accesses from this "https://gitsnps.internal.synopsys.com/haps/jeta.git"   #(jeta_cairo_team branch).
 
