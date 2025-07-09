@@ -1,0 +1,50 @@
+#
+# coreKit Build Information
+#
+
+coreKit Name             : DW_axi
+coreKit Version          : 4.06a
+Top Level Design Name    : DW_axi
+Encrypted License        : DesignWare
+Source License           : DWC-AMBA-Fabric-Source
+Restricted License       : 
+Automotive License       : 
+
+
+coreBuilder Version      : U-2023.06-1
+RCE Version (imported)   : 2023.06
+RCE Version (environment): 2023.06
+Build Date               : Wed Nov  1 09:02:43 2023
+
+#
+# Tool version requirements
+#
+
+Minimum version of FusionCompiler            : T-2022.03-SP5
+Minimum version of MTI_Verilog               : 2022.1
+Minimum version of NC_Verilog                : 21.03.001
+Minimum version of ProtoCompiler             : 2020.12-1
+Minimum version of RTL_Architect             : T-2022.03-SP5
+Minimum version of SpyGlass                  : T-2022.06-SP1-1
+Minimum version of SpyGlass_SG_EngCouncil    : 2022.12
+Minimum version of SpyGlass_SG_GuideWare     : 2022.06
+Minimum version of VCS                       : T-2022.06-SP2
+Minimum version of VC_LP                     : T-2022.06-SP2
+Minimum version of VC_SpyGlass               : 2022.06-SP1-1a
+Minimum version of VC_Static                 : T-2022.06-SP2
+Minimum version of VcSpyGlass_SG_EngCouncil  : 2022.12
+Minimum version of Verdi                     : T-2022.06-SP2
+Minimum version of dc_shell                  : T-2022.03-SP5
+Minimum version of fm_shell                  : T-2022.03-SP5
+Minimum version of pt_shell                  : T-2022.03-SP5
+Minimum version of synplicity                : S-2021.09-SP2
+Minimum version of vip:amba_svt              : U-2022.12
+Minimum version of vip:svt                   : T-2022.09
+
+#
+# EnvTool version requirements
+#
+
+Minimum EnvTool version of Python3           : 3.8.1
+Minimum EnvTool version of GnuMake           : 3.82
+Minimum EnvTool version of Perl              : 5.8.3

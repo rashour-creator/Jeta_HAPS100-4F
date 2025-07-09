@@ -1,0 +1,4 @@
+-sverilog
+${PROTOCOMPILER_HOME}/lib/di/haps_controlled_clocks.v
+${PROTOCOMPILER_HOME}/lib/synip/hcei/zceistubs.v
+${PROTOCOMPILER_HOME}/lib/synip/clocks/gsv_trigger_hypermods.v

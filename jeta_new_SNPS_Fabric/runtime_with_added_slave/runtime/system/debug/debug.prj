@@ -1,0 +1,115 @@
+#--  Synopsys, Inc.
+#--  Version R-2020.12-SP1-1
+#--  Project file /slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/compile_new_rtl/runtime/system/debug/debug.prj
+#--  Written on Tue Jan 14 18:44:22 2025
+
+
+#project files
+add_file -ident_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/scripts/basic_debug.idc"
+add_file -board_syn "../../../partition_db/system_generate/sg0/targetsystem.srs"
+add_file -source_list "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/compile_new_rtl/fdc.sfl"
+add_file -fpga_constraint "$LIB/xactors/xactors_gen/templates/syn_useioff.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/scripts/constraints.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/vivadoips/haps100_mig_ddr4_2020.1/mig_ddr4_macro.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/vivadoips/haps100_mig_ddr4_2020.1/constraints/mig_ddr4.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/vivadoips/haps100_axi_extmem_2020.1/axi_extmem_macro.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/vivadoips/haps100_axi_extmem_2020.1/constraints/axi_extmem.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/vivadoips/haps100_axi_mmio_2020.1/axi_mmio_macro.fdc"
+add_file -fpga_constraint "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/vivadoips/haps100_axi_mmio_2020.1/constraints/axi_mmio.fdc"
+add_file -partition_syn "/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/compile_new_rtl/partition_db/system_generate/sg0/haps_soc_rt_final.srp"
+
+
+#implementation: "debug"
+impl -add debug -type haps
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -include_path {$LIB/board;/slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/compile_new_rtl}
+
+#device options
+set_option -technology HAPS-100
+set_option -design_flow partition
+set_option -part XCVU19P
+set_option -package FSVA3824
+set_option -speed_grade -2-e
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -use_fsm_explorer 0
+set_option -top_module "haps_soc"
+
+# hdl_compiler_options
+set_option -distributed_compile 1
+set_option -verification_mode 0
+set_option -hdl_strict_syntax 0
+set_option -debug_dumpvars 1
+
+# mapper_without_write_options
+set_option -frequency 1
+set_option -default_enum_encoding sequential
+set_option -identify_debug_mode 1
+set_option -split_generated_modules 1
+set_option -srs_instrumentation 1
+
+# mapper_options
+set_option -write_verilog 1
+set_option -write_structural_verilog 0
+set_option -write_vhdl 0
+
+# xilinx_options
+set_option -synthesis_strategy routability
+set_option -automatic_compile_point_timing_est 1
+set_option -preserve_slash_names 1
+set_option -unified_compile_flow 1
+set_option -temp_formality_support 0
+set_option -formality_support 0
+set_option -optimize_ngc 1
+
+# Xilinx Virtex2
+set_option -run_prop_extract 1
+set_option -maxfan 10000
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -update_models_cp 0
+set_option -retiming 0
+set_option -no_sequential_opt 0
+set_option -no_sequential_opt_bram_mapping both
+set_option -fix_gated_and_generated_clocks 1
+set_option -force_async_genclk_conv 1
+
+# common_options
+set_option -default_par_optionfile HAPS
+set_option -add_dut_hierarchy 1
+set_option -prepare_readback 0
+
+# Xilinx Virtex UltraScale+ FPGAs
+set_option -enable_prepacking 1
+set_option -use_vivado 1
+set_option -par_strategy timing_qor
+
+# NFilter
+set_option -popfeed 1
+set_option -constprop 1
+set_option -createhierarchy 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 0
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 0
+set_option -write_pp_mixed 0
+set_option -write_pp_srs 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+set_option -srp_file  /slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/compile_new_rtl/partition_db/system_generate/sg0/haps_soc_rt_final.srp
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./haps_soc.edf"
+impl -active "debug"

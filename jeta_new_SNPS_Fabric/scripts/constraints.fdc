@@ -1,0 +1,17 @@
+# For sys_clk
+if { [info exists env(ENABLE_GSV)] && $env(ENABLE_GSV) == 1 } {
+  create_clock -name MASTER_CLOCK [get_ports {sys_clk}] -period 25
+} else {
+  create_clock -name MASTER_CLOCK [get_ports {sys_clk}] -period 50
+}
+set_clock_groups -asynchronous -name {clk_grp_sys}  -group [get_clocks -include_generated_clocks {MASTER_CLOCK}]
+
+# JTAG clock
+create_clock -name JTAG_CLOCK [get_ports {jtag_TCK}]  -period 100
+set_clock_groups -asynchronous -name {clk_grp_jtag} -group [get_clocks -include_generated_clocks {JTAG_CLOCK}]
+define_attribute {n:jtag_TCK} CLOCK_DEDICATED_ROUTE FALSE
+
+# Memory clock
+create_clock -name DDR_CLOCK  [get_ports {ddr_clk}] -period 5
+#create_generated_clock -name {ui_clk} -divide_by 1 [get_ports {i_mig.c0_ddr4_ui_clk}]
+set_clock_groups -asynchronous -name {clk_grp_ddr}  -group {[get_clocks -include_generated_clocks {DDR_CLOCK}] [get_ports {i_mig.c0_ddr4_ui_clk}]}

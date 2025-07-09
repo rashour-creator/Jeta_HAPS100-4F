@@ -1,0 +1,12 @@
+com cabletype {umrbus}
+server set -cabletype umrbus -addr 127.0.0.1 -port 58111 -logf ipc_tcp_umrbus.log -usecs 0 -userec 0 -ipvcli 4 -ipvsrv 4 -tcpconnect 500 -timeout 15000
+searchpath add {.}
+searchpath add {/slowfs/de06-cae-scratch/work/reem/jeta_compare/jeta_new_SNPS_Fabric/runtime_with_added_slave/runtime/system/debug}
+waveform preferences -period 20 -cycle 1 -clock 1 -qual_separate 0 -gsv_signal_mode 0 -enum native -gsv_append 0
+iice sampler -iice {IICE_core_clk} -sampledepth 16384
+statemachine addtrans -iice {IICE_core_clk} -from 0 -to 0 -cond {c0} -trigger
+watch enable -iice {IICE_core_clk} -condition 0 -language verilog {haps_soc.axi_mmio.aw__#valid} {1'b0} {1'b1}
+device prioritize -type any
+configid set -import {}
+dmf import -path {}
+iice current {IICE_core_clk}

@@ -1,0 +1,91 @@
+---
+coreKitBuildInformation:
+   coreKitName: DW_axi
+   coreKitVersion: 4.06a
+   Vendor: Synopsys
+   Library: DesignWareLibrary
+   BuildId: 18.26.9.4
+   TopLevelDesignName: DW_axi
+   SourceLicense:
+      - DWC-AMBA-Fabric-Source
+   EncryptedLicense:
+      - DesignWare
+   VersionLicense: []
+   RestrictedLicense: []
+   AutomotiveLicense: []
+   coreBuilderVersion: U-2023.06-1
+   RCEVersionImported: 2023.06
+   RCEVersionEnvironment: 2023.06
+   RCEPluginNamespace: RCEP
+   BuildDate: Wed Nov  1 09:02:43 2023
+   ToolMinVer:
+      -
+         Name: 'FusionCompiler'
+         Version: 'T-2022.03-SP5'
+      -
+         Name: 'ProtoCompiler'
+         Version: '2020.12-1'
+      -
+         Name: 'RTL_Architect'
+         Version: 'T-2022.03-SP5'
+      -
+         Name: 'SpyGlass'
+         Version: 'T-2022.06-SP1-1'
+      -
+         Name: 'SpyGlass_SG_EngCouncil'
+         Version: '2022.12'
+      -
+         Name: 'SpyGlass_SG_GuideWare'
+         Version: '2022.06'
+      -
+         Name: 'VCS'
+         Version: 'T-2022.06-SP2'
+      -
+         Name: 'VC_LP'
+         Version: 'T-2022.06-SP2'
+      -
+         Name: 'VC_SpyGlass'
+         Version: '2022.06-SP1-1a'
+      -
+         Name: 'VC_Static'
+         Version: 'T-2022.06-SP2'
+      -
+         Name: 'VcSpyGlass_SG_EngCouncil'
+         Version: '2022.12'
+      -
+         Name: 'Verdi'
+         Version: 'T-2022.06-SP2'
+      -
+         Name: 'dc_shell'
+         Version: 'T-2022.03-SP5'
+      -
+         Name: 'fm_shell'
+         Version: 'T-2022.03-SP5'
+      -
+         Name: 'pt_shell'
+         Version: 'T-2022.03-SP5'
+      -
+         Name: 'synplicity'
+         Version: 'S-2021.09-SP2'
+   EnvToolMinVer:
+      -
+         Name: 'Python3'
+         Version: '3.8.1'
+      -
+         Name: 'GnuMake'
+         Version: '3.82'
+      -
+         Name: 'Perl'
+         Version: '5.8.3'
+   VipMinVer:
+      -
+         Name: 'vip:amba_svt'
+         Version: 'U-2022.12'
+      -
+         Name: 'vip:svt'
+         Version: 'T-2022.09'
+   DwhVer: []
+   DwhVe: []
+   TargetToolsetId: 2023.06
+   TargetToolsetIdVcurrent: 2023.09
+

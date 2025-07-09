@@ -1,0 +1,63 @@
+# -*-tcl-*-
+##############################################################################
+#  Copyright (C) 2016 Synopsys, Inc.
+#  This script and the associated documentation are confidential and
+#  proprietary to Synopsys, Inc. Your use or disclosure of this script
+#  is subject to the terms and conditions of a written license agreement
+#  between you, or your company, and Synopsys, Inc.
+##############################################################################
+#          $Id: //chipit/chipit/main/dev/systems/examples/xtor_riscv_soc/scripts/ddr4.pcf#1 $
+#      $Author: khertig $
+#    $DateTime: 2021/11/03 07:40:14 $
+############################################################################## 
+
+## HAPS Daughter Board traces
+set DATA_WIDTH 72
+set DDR_DB [file rootname [file tail [info script]]]
+if { $DDR_DB == "ddr4" } {
+  set DDR_DB "FB1"
+}
+
+set TRACE(DDR4_REFCLK_EN_N) {1 ddr_clk_en_n}
+set TRACE(DDR4_REFCLK_P)    {1 ddr_clk}
+if { [design_list_nets -name {ddr_clk_n}] != "" } {
+  set TRACE(DDR4_REFCLK_N)  {1 ddr_clk_n}
+}
+if { [design_list_nets -name {mem_ck\[1\]}] == "" } {
+  set TRACE(DDR4_CK_T)      {0 mem_ck_t}
+  set TRACE(DDR4_CK_C)      {0 mem_ck_c}
+} else {
+  set TRACE(DDR4_CK_T)      {2 mem_ck_t}
+  set TRACE(DDR4_CK_C)      {2 mem_ck_c}
+}
+set TRACE(DDR4_A)        {17 mem_a}
+set TRACE(DDR4_DM_N)     [list [expr $DATA_WIDTH/8] mem_dm_dbi_n]
+set TRACE(DDR4_BA)        {2 mem_ba}
+set TRACE(DDR4_BG)        {2 mem_bg}
+set TRACE(DDR4_ODT)       {2 mem_odt}
+set TRACE(DDR4_CKE)       {2 mem_cke}
+set TRACE(DDR4_CS_N)      {2 mem_cs_n}
+set TRACE(DDR4_ACT_N)     {1 mem_act_n}
+set TRACE(DDR4_PARITY)    {1 mem_parity}
+set TRACE(DDR4_RESET_C)   {1 mem_reset_n}
+set TRACE(DDR4_DQ)       [list $DATA_WIDTH mem_dq]
+set TRACE(DDR4_DQS_T)    [list [expr $DATA_WIDTH/8] mem_dqs_t]
+set TRACE(DDR4_DQS_C)    [list [expr $DATA_WIDTH/8] mem_dqs_c]
+
+foreach net [array names TRACE] {
+  if { [lindex $TRACE($net) 0] > 1 } {
+    for {set j 0} {$j < [lindex $TRACE($net) 0]} {incr j} {
+      if { [design_list_nets -name [lindex $TRACE($net) 1]\\\[${j}\\\]] != "" } {
+        assign_port [lindex $TRACE($net) 1]\[${j}\] -trace $DDR_DB.${net}\[${j}\]
+      }
+    }
+  } elseif { [lindex $TRACE($net) 0] == 0 } {
+    if { [design_list_nets -name [lindex $TRACE($net) 1]\\\[0\\\]] != "" } {
+      assign_port [lindex $TRACE($net) 1]\[0\] -trace $DDR_DB.${net}\[0\]
+    }
+  } else {
+    if { [design_list_nets -name [lindex $TRACE($net) 1]] != "" } {
+      assign_port [lindex $TRACE($net) 1] -trace $DDR_DB.${net}
+    }
+  }
+}

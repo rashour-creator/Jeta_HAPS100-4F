@@ -1,0 +1,38 @@
+// ------------------------------------
+//       $Id: //chipit/chipit/main/dev/systems/examples/xtor_riscv_soc/rtl/sim/ddr4_sim.vc#1 $
+//   $Author: khertig $ 
+// $DateTime: 2021/12/22 07:52:03 $
+// ------------------------------------
+// filelist for ddr4_ht3 (populate with Micron RDIMM MTA18ASF1G72PDZ-2G1) daughter card 
+// ------------------------------------
+
+-nc
+-sverilog
+
+// Common Xilinx Libraries
+-y ${XILINX_VIVADO}/data/verilog/src/retarget +libext+.v
+-y ${XILINX_VIVADO}/data/verilog/src/unisims +libext+.v
+// Xilinx lib required for DDR IP
+-f ${XILINX_VIVADO}/data/secureip/bitslice_control_k2/bitslice_control_k2_cell.list.vf
+-f ${XILINX_VIVADO}/data/secureip/bitslice_control_d1/bitslice_control_d1_cell.list.vf
+-f ${XILINX_VIVADO}/data/secureip/rxtx_bitslice_k2/rxtx_bitslice_k2_cell.list.vf
+-f ${XILINX_VIVADO}/data/secureip/rxtx_bitslice_d1/rxtx_bitslice_d1_cell.list.vf
+-f ${XILINX_VIVADO}/data/secureip/tx_bitslice_tri_k2/tx_bitslice_tri_k2_cell.list.vf
+-f ${XILINX_VIVADO}/data/secureip/tx_bitslice_tri_d1/tx_bitslice_tri_d1_cell.list.vf
+
+// DDR4 RDIMM sim model
+-y ${HAPS_PRJ_DIR}/rtl/sim/ddr4_rdimm_wrapper   +libext+.sv
+-y ${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs +libext+.svp
+
++incdir+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs
+
++define+DDR4_8G_X8
+
+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs/arch_package.sv
+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs/proj_package.sv
+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs/dimm_interface.sv
+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs/StateTable.svp
+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs/MemoryArray.svp
+${HAPS_PRJ_DIR}/rtl/sim/micron/protected_vcs/ddr4_model.svp
+
+${HAPS_PRJ_DIR}/rtl/sim/ddr4_rdimm_wrapper/ddr4_rdimm_wrapper.sv

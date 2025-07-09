@@ -1,0 +1,3 @@
+[i_axi_a2x_2_DW_axi_a2x RCEP Jan-09 14:33:41 430] INFO Cmd: /remote/sdgedt/tools/reem/SNPS_FABRIC/Subsystem1/components/i_axi_a2x_2/scratch/rce/perl/verpp/bin/verpp -img=__GUARD__  -n -af=/remote/sdgedt/tools/reem/SNPS_FABRIC/Subsystem1/components/i_axi_a2x_2/scratch/rce/verpp/files.specifyconfiguration.lst (::RCE_202306::runVerpp)
+[i_axi_a2x_2_DW_axi_a2x RCEP Jan-09 14:33:42 430] INFO verpp ran successfully (::RCE_202306::runVerpp)
+[i_axi_a2x_2_DW_axi_a2x RCEP Jan-09 14:33:42 430] INFO  (::RCE_202306::runVerpp)

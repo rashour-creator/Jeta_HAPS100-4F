@@ -1,0 +1,20 @@
+[DIGILENT] This device supports JTAG7 scan formats.
+[DIGILENT] We  chose device `JtagHs2'.
+[DIGILENT] Product=309 variant=1 fwid=52 firmware-version=10b.
+[DIGILENT] It is possible to set the JTAG speed.
+[DIGILENT] Current speed is 10000000 Hz.
+[DIGILENT] Attempting to set speed to 13500000 Hz.
+[DIGILENT] Speed was set to 10000000 Hz.
+[DIGILENT] This device supports JTAG7 oscan1 format.
+[DIGILENT] Suppress these messages with environment variable DIG_VERBOSE=0.
+debugger int  ($retcode=-42) = -42 (0xffffffd6)
+
+
+[DEBUG]: inside main
+
+load Bin from UMR!
+CNN binary is of size 308536, assume already loaded via UMR...
+1. ======= Construct CnnGraphRunner object ======= 
+CNN Power domains Supported
+CNN DMI loading supported
+waiting for image

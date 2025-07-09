@@ -1,0 +1,74 @@
+
+                       HAPS (R) ProtoCompiler100 Runtime 
+
+               Version R-2020.12-SP1-1 for RHEL64 - Apr 08, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Starting:    /global/apps/protocompiler_2020.12-SP1-1/linux_a_64/mbin/identify_debugger
+Install:     /global/apps/protocompiler_2020.12-SP1-1
+Hostname:    de06-lab46
+Date:        Thu Mar  6 13:27:00 2025
+Version:     R-2020.12-SP1-1
+
+Arguments:   -product protocompiler100_runtime
+ProductType: protocompiler100_runtime
+
+For command descriptions, use the following tools:
+- For syntax statements, enter "help  <command_name>"  in the Tcl shell
+- For detailed descriptions:
+   1. Select "Help->Help Topics"
+   2. Click the Search tab
+   3. Enter <command_name>
+
+
+License checkout: ProtoCompiler100-RT
+License: ProtoCompiler100-RT from server de02snpslmd1 
+Licensed Vendor: All FPGA
+
+External Tools          Supported Version       Install Environment Variable
+Vivado                  2020.1                  XILINX_VIVADO=/global/snps_apps/vivado_2020.1/Vivado/2020.1
+Formality               2020.09-SP5             FORMALITY=""
+Verdi                   R-2020.12-SP2-6         VERDI_HOME=/global/apps/verdi_2021.09-1
+VC Formal               2020.12-SP2-6           VC_STATIC_HOME=""
+Confpro                 2020.12-SP1-1           HAPS_INSTALL_DIR=/global/apps/protocompiler_2020.12-SP1-1
+Design Compiler         2020.09-SP5             DC_ROOT=""
+Design Ware             2020.09-SP5-5           SYNOPSYS=""
+  (Please make sure that DC_ROOT and SYNOPSYS points to the same location.)
+VCS                     2020.03-SP2-10          VCS_HOME=/global/apps/vcs_2021.09-SP2-6
+Note: Opening debugger view for project '/slowfs/de06-cae-scratch/work/reem/jeta_compare/jeta_new_SNPS_Fabric/runtime_with_added_slave/runtime/system/debug/debug.prj'
+Note: The debugger obtained its own license
+haps_soc.axi_mmio.aw__#valid enable in condition 0 in IICE 'IICE_core_clk'
+Transition 0 -> 0 when 'c0' added
+Setting up hardware driver ...
+ok.
+Checking debug IP state...
+Auto-detecting the device chain...
+Links are not trained! Use command 'iice link -train'
+Auto-detecting the device chain...
+DTD core reset for /umr3pci0/pci-0280-p1/mod-E030706/af1/dbg2/dbg2dac9cf5c3559
+Poll for channel up
+Waiting on link training to finish...
+Links are successfully trained!
+ok.
+Checking device chain setup ...
+Auto-detecting the device chain...
+
+Logical    Physical   CAPIM Path                      IICEs                        Signature     FPGA ID       Config ID     
+Partition  Partition                                                                                                         
+---------------------------------------------------------------------------------------------------------------------------
+FB1.uA     FB1.uA     /umr3pci0/pci-0280-p1/mod-E030  IICE_axi_DDR, IICE_core_clk  0x946fa27e    0xdac9,       0xcf5c3559,   
+                      706/uf1/usr/dbg5dac9cf5c3559                                               passed        passed        
+===========================================================================================================================
+IICE 'IICE_core_clk' configured, waiting for trigger ... 
+Disable IICE for Interrupt: 'IICE_axi_DDR'
+Disable IICE for Interrupt: 'IICE_core_clk'
+IICE 'IICE_axi_DDR' Interrupted
+IICE 'IICE_core_clk' Interrupted
+hub=FB1.uA depth=16416 trigPos/Lag=13084(52336/0) lastCapPos=0(0)
+Warning: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+3092653Saving activations to file 'last_run.adc'

@@ -1,0 +1,9 @@
+{
+	// Tool Path : /global/apps/protocompiler_2020.12-SP1-1/linux_a_64/mbin/protobatch
+	// Hostname  : de06-lab46
+	// Date      : Tue Jan 14 18:44:24 2025
+	// Vesion    : R-2020.12-SP1-1
+	// Directory : /slowfs/de06-cae-scratch/work/reem/jeta_capim_new_SNPS_fabric_slave/work/compile_new_rtl/runtime
+	"runtimeExportDirectory" : ".",
+	"workDirectory" : ""
+}

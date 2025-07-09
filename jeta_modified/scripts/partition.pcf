@@ -1,0 +1,70 @@
+assign_virtual_port -port reset_n -type USR_LOCAL_RESET -bin {FB1.uA}
+
+net_attribute     {sys_clk} -function {GCLK} -is_clock 1
+assign_global_net {sys_clk} {SYS_CLK}
+
+if { [info exists ::env(ENABLE_GSV)] && $env(ENABLE_GSV) == 1 } {
+	zcei_assign_route -master_bin FB1.uA
+	if { [info exists ::env(ENABLE_TDM)] && $::env(ENABLE_TDM) != 0 } { 
+		net_attribute {haps_infra_clksrc_MASTER_CLOCK_cclock_base_out} -function GCLK
+		assign_global_net {haps_infra_clksrc_MASTER_CLOCK_cclock_base_out} CCM_clock 
+	}
+}
+
+reset_synchronize -force_repl -net reset_n -init 0 -extra_pipeline_stages 3 -clock sys_clk
+bin_attribute {FB1.uB} -locked
+bin_attribute {FB1.uC} -locked
+bin_attribute {FB1.uD} -locked
+
+if { [info exists ::env(ENABLE_TDM)] && $::env(ENABLE_TDM) != 0 } {
+	if { [info exists ::env(ENABLE_TDM)] && $::env(ENABLE_TDM) == "hstdm" } {
+		assign_cell {i:I_ctrl_capim} {FB1.uA}
+		assign_cell {i:I_xactors_connect} {FB1.uA}
+		assign_cell {i:umr3_virtual_uart_top_inst_0} {FB1.uA}
+		assign_cell {i:resetSyncInvSystemReset} {FB1.uA}
+		assign_cell {i:resetSyncInvCapimUiReset} {FB1.uA}
+		assign_cell {i:i_mig} {FB1.uA}
+		assign_cell {i:i_SNPS_fabric} {FB1.uA}
+		assign_cell {i:i_axi_mmio} {FB1.uA}
+		assign_cell {i:i_axi_extmem} {FB1.uA}
+		assign_cell {i:i_axi_master_xactor} {FB1.uA}
+		assign_cell {i:i_axi_mmio_master_xactor} {FB1.uA}
+		assign_cell {i:RocketSystem_reset} {FB1.uA}
+
+		assign_cell {i:RocketSystem} {FB1.uA}
+
+    	tdm_control -qualification_mode startseq
+
+    	array set TRACE {
+    		1  mmio_axi4_0_ar_valid
+    		2  mmio_axi4_0_aw_valid
+    		3  mmio_axi4_0_w_valid
+    		4  axi_mmio_Master01_arready
+    		5  axi_mmio_Master01_wready
+    		6  axi_mmio_Master01_awready
+		}
+
+    	foreach indx [array names TRACE] {
+		  net_attribute $TRACE($indx) -tdm_group DIRECT
+		}
+
+    } else {
+    	if { [info exists ::env(ENABLE_TDM)] && $::env(ENABLE_TDM) == "mgtdm" } {
+    		tdm_control -enable_mgtdm 1 -min_ratio 64 -max_ratio 1024 -hstdm_bit_rate 1000 -hstdm_reset_trace {NONE} -type HSTDM
+    	}
+    }
+}
+
+
+# GPIO connection
+assign_port {jtag_TMS} -trace {gpio_ht3.GPIOA[6]}
+assign_port {jtag_TCK} -trace {gpio_ht3.GPIOA[7]}
+assign_port {jtag_TDO} -trace {gpio_ht3.GPIOA[8]}
+assign_port {jtag_TDI} -trace {gpio_ht3.GPIOA[9]}
+
+assign_port {uart_rx}      -trace {gpio_ht3.UART_TXD}
+assign_port {uart_tx}      -trace {gpio_ht3.UART_RXD}
+assign_port {uart_rts_n}   -trace {gpio_ht3.UART_RTS_N}
+assign_port {uart_cts_n}   -trace {gpio_ht3.UART_CTS_N}
+assign_port {uart_sleep_n} -trace {gpio_ht3.UART_SLEEP_N}
+

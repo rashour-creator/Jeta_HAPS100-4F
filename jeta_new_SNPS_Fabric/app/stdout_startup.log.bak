@@ -1,0 +1,156 @@
+
+                       HAPS (R) ProtoCompiler100 Runtime 
+
+               Version R-2020.12-SP1-1 for RHEL64 - Apr 08, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Starting:    /global/apps/protocompiler_2020.12-SP1-1/linux_a_64/mbin/identify_debugger
+Install:     /global/apps/protocompiler_2020.12-SP1-1
+Hostname:    de06-lab46
+Date:        Thu Mar  6 13:26:35 2025
+Version:     R-2020.12-SP1-1
+
+Arguments:   -product protocompiler100_runtime
+ProductType: protocompiler100_runtime
+
+For command descriptions, use the following tools:
+- For syntax statements, enter "help  <command_name>"  in the Tcl shell
+- For detailed descriptions:
+   1. Select "Help->Help Topics"
+   2. Click the Search tab
+   3. Enter <command_name>
+
+
+License checkout: ProtoCompiler100-RT
+License: ProtoCompiler100-RT from server de02snpslmd1 
+Licensed Vendor: All FPGA
+
+External Tools          Supported Version       Install Environment Variable
+Vivado                  2020.1                  XILINX_VIVADO=/global/snps_apps/vivado_2020.1/Vivado/2020.1
+Formality               2020.09-SP5             FORMALITY=""
+Verdi                   R-2020.12-SP2-6         VERDI_HOME=/global/apps/verdi_2021.09-1
+VC Formal               2020.12-SP2-6           VC_STATIC_HOME=""
+Confpro                 2020.12-SP1-1           HAPS_INSTALL_DIR=/global/apps/protocompiler_2020.12-SP1-1
+Design Compiler         2020.09-SP5             DC_ROOT=""
+Design Ware             2020.09-SP5-5           SYNOPSYS=""
+  (Please make sure that DC_ROOT and SYNOPSYS points to the same location.)
+VCS                     2020.03-SP2-10          VCS_HOME=/global/apps/vcs_2021.09-SP2-6
+Note: Opening debugger view for project '/slowfs/de06-cae-scratch/work/reem/jeta_compare/jeta_new_SNPS_Fabric/runtime_with_added_slave/runtime/system/debug/debug.prj'
+Saving activations to file 'last_run.adc'
+Saving activations to file 'last_run.adc'
+While running 64-bit - Linux build
+
+@E::Signal 000 error in identify_debugger
+Stack trace
+ID:ui202012pcp4/198/identify_debugger
+===========
+0x4d26ee
+0x4d6210
+0xb10ac4
+0x7ffff1f4eb7f
+0x7d56a3
+0xb12808
+0xcb1a48
+0xcb497b
+0x7ffff6c8bf30
+0x7ffff5fa496b
+0x7ffff5fab4bb
+0x7ffff6c735bc
+0x7ffff6c7681d
+0x7ffff6ca1572
+0x7ffff1a3295c
+0x7ffff1a32d17
+0x7ffff1a32daf
+0x7ffff6ca16c3
+0x7ffff60473b5
+0x7ffff6c76b30
+0xcfe1b7
+0x14abd69
+0x803fae
+0x8040a2
+0x804266
+0xfa57d2
+0x1203487
+0x81c181
+0x14aff2b
+0x840735
+0xcb66be
+0xcba897
+0xcb2c03
+0xc2c18c
+0xc3c556
+0xcb1bbd
+0xcb3791
+0xf7c476
+0xb18d89
+0xb19adc
+0xb19c17
+0xb33b5f
+0xcfc4c4
+0xcfc76c
+0xcfc955
+0x7ffff6c864bf
+0x15e3d76
+0x15e3fc0
+0x15e4059
+0x7ffff6c864bf
+0x7ffff65132ef
+0x7ffff6c864bf
+0x7ffff64a2084
+0x7ffff64a2237
+0x15e4363
+0x7ffff5ff76cf
+0x7ffff63990dd
+0x7ffff64aadda
+0x7ffff64e8a4b
+0x7ffff6c73725
+0x7ffff5fa494b
+0x7ffff5fab622
+0x7ffff6c735bc
+0x7ffff5faac8e
+0x7ffff60218b3
+0x7ffff601fb9d
+0x7ffff6047311
+0x7ffff1a3295c
+0x7ffff1a32d17
+0x7ffff1a32daf
+0x7ffff6ca16c3
+0x7ffff60473b5
+0x7ffff6c71f70
+0x7ffff6c72284
+0x7ffff644d65b
+0xcb39e4
+0x4b27b4
+0xc36cb9
+0x4b209f
+0x4aedad
+
+Please open a web case about this problem. A Synopsys CAE will then contact you.
+
+Instructions to open a web-case:
+1.  Go to the Synopsys support web site, https://solvnetplus.synopsys.com. 
+2.  Login with your user name and password. If you do not have an account, please register and set one up.
+3.  Click the `Enter A Call' link.
+4.  Provide a detailed description of the problem, and fill in all required fields.
+5.  Attach any test cases or archived project files required to reproduce the problem. 
+Note: Closing debugger view
+Note: Opening debugger view for project '/slowfs/de06-cae-scratch/work/reem/jeta_compare/jeta_new_SNPS_Fabric/runtime_with_added_slave/runtime/system/debug/debug.prj'
+Please open a web case about this problem. A Synopsys CAE will then contact you.
+
+Instructions to open a web-case:
+
+1.  Go to the Synopsys support web site, https://solvnetplus.synopsys.com.
+
+2.  Login with you user name and  password. If you do not have an account, please register and set it up.
+
+3.  Click the  'Enter A Call' link.
+
+4.  Provide a detailed description of the problem, and fill in all  required fields.
+
+5.  Attach any test cases or archived project files required to reproduce the problem.
+

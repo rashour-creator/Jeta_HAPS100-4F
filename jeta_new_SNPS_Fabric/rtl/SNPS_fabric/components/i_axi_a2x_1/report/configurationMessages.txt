@@ -1,0 +1,128 @@
+-------------------------------------------------
+Timestamp: Thu Jan 09 13:58:12 EET 2025
+Title:
+coreTools version
+Message:
+W-2024.09-SP1
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 13:58:12 EET 2025
+Title:
+coreKit ID
+Message:
+DW_axi_a2x
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 13:58:12 EET 2025
+Title:
+coreKit version
+Message:
+2.06a
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 13:58:12 EET 2025
+Title:
+Warning
+Message:
+Warning: A2X_READ_ORDER is configured to support In-order transactions. To enable the support for Out-of-Order transactions, configure A2X_READ_ORDER to value 1.
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:14:05 EET 2025
+Title:
+coreTools version
+Message:
+W-2024.09-SP1
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:14:05 EET 2025
+Title:
+coreKit ID
+Message:
+DW_axi_a2x
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:14:05 EET 2025
+Title:
+coreKit version
+Message:
+2.06a
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:14:08 EET 2025
+Title:
+Warning
+Message:
+Warning: A2X_READ_ORDER is configured to support In-order transactions. To enable the support for Out-of-Order transactions, configure A2X_READ_ORDER to value 1.
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:23:47 EET 2025
+Title:
+coreTools version
+Message:
+W-2024.09-SP1
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:23:47 EET 2025
+Title:
+coreKit ID
+Message:
+DW_axi_a2x
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:23:47 EET 2025
+Title:
+coreKit version
+Message:
+2.06a
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:23:49 EET 2025
+Title:
+Warning
+Message:
+Warning: A2X_READ_ORDER is configured to support In-order transactions. To enable the support for Out-of-Order transactions, configure A2X_READ_ORDER to value 1.
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:53:51 EET 2025
+Title:
+coreTools version
+Message:
+W-2024.09-SP1
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:53:51 EET 2025
+Title:
+coreKit ID
+Message:
+DW_axi_a2x
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:53:51 EET 2025
+Title:
+coreKit version
+Message:
+2.06a
+-------------------------------------------------
+
+-------------------------------------------------
+Timestamp: Thu Jan 09 14:53:52 EET 2025
+Title:
+Warning
+Message:
+Warning: A2X_READ_ORDER is configured to support In-order transactions. To enable the support for Out-of-Order transactions, configure A2X_READ_ORDER to value 1.
+-------------------------------------------------
+

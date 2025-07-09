@@ -1,0 +1,177 @@
+Magic 271485
+Revision Verdi_S-2021.09-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 24 1828 771 201 203
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d . "" "/slowfs/de06-cae-scratch/work/reem/jeta_capim/work/compile_capim_type_change/runtime/system/debug/IICE_core_clk.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+windowTimeUnit 1ns
+
+; waveform viewport range
+zoom 0.000000 27738.640000 1n
+cursor 0.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+userMarker 110800 trigger ID_RED5 line_solid
+
+; visible top row signal index
+top 17
+; marker line index
+markerPos 2
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/slowfs/de06-cae-scratch/work/reem/jeta_capim/work/compile_capim_type_change/runtime/system/debug/IICE_core_clk.fsdb"
+addSignal -h 15 /haps_soc/identify_cycle
+addSignal -h 15 -holdScope identify_sampleclock
+addSignal -h 15 -holdScope RocketSystem_reset
+addSignal -h 15 -holdScope axi_bram_ctrl.ar__#len[7:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.ar__#valid
+addSignal -h 15 -holdScope axi_bram_ctrl.araddr[31:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.arid[4:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.arready
+addSignal -h 15 -holdScope axi_bram_ctrl.aw__#len[7:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.aw__#valid
+addSignal -h 15 -holdScope axi_bram_ctrl.awaddr[31:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.awid[4:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.awready
+addSignal -h 15 -holdScope axi_bram_ctrl.b__#valid
+addSignal -h 15 -holdScope axi_bram_ctrl.bready
+addSignal -h 15 -holdScope axi_bram_ctrl.r__#valid
+addSignal -h 15 -holdScope axi_bram_ctrl.rdata[31:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.rready
+addSignal -h 15 -holdScope axi_bram_ctrl.w__#valid
+addSignal -h 15 -holdScope axi_bram_ctrl.wdata[31:0]
+addSignal -h 15 -holdScope axi_bram_ctrl.wready
+addSignal -h 15 -holdScope axi_bram_ctrl.wstrb[3:0]
+addSignal -h 15 -holdScope axi_ext_mem.ar__#len[7:0]
+addSignal -h 15 -holdScope axi_ext_mem.ar__#valid
+addSignal -h 15 -holdScope axi_ext_mem.araddr[31:0]
+addSignal -h 15 -holdScope axi_ext_mem.arid[4:0]
+addSignal -h 15 -holdScope axi_ext_mem.arready
+addSignal -h 15 -holdScope axi_ext_mem.aw__#len[7:0]
+addSignal -h 15 -holdScope axi_ext_mem.aw__#valid
+addSignal -h 15 -holdScope axi_ext_mem.awaddr[31:0]
+addSignal -h 15 -holdScope axi_ext_mem.awid[4:0]
+addSignal -h 15 -holdScope axi_ext_mem.awready
+addSignal -h 15 -holdScope axi_ext_mem.b__#valid
+addSignal -h 15 -holdScope axi_ext_mem.bready
+addSignal -h 15 -holdScope axi_ext_mem.r__#valid
+addSignal -h 15 -holdScope axi_ext_mem.rdata[63:0]
+addSignal -h 15 -holdScope axi_ext_mem.rready
+addSignal -h 15 -holdScope axi_ext_mem.w__#valid
+addSignal -h 15 -holdScope axi_ext_mem.wdata[63:0]
+addSignal -h 15 -holdScope axi_ext_mem.wready
+addSignal -h 15 -holdScope axi_ext_mem.wstrb[7:0]
+addSignal -h 15 -holdScope axi_mmio.ar__#len[7:0]
+addSignal -h 15 -holdScope axi_mmio.ar__#valid
+addSignal -h 15 -holdScope axi_mmio.araddr[31:0]
+addSignal -h 15 -holdScope axi_mmio.arid[4:0]
+addSignal -h 15 -holdScope axi_mmio.arready
+addSignal -h 15 -holdScope axi_mmio.aw__#len[7:0]
+addSignal -h 15 -holdScope axi_mmio.aw__#valid
+addSignal -h 15 -holdScope axi_mmio.awaddr[31:0]
+addSignal -h 15 -holdScope axi_mmio.awid[4:0]
+addSignal -h 15 -holdScope axi_mmio.awready
+addSignal -h 15 -holdScope axi_mmio.b__#valid
+addSignal -h 15 -holdScope axi_mmio.bready
+addSignal -h 15 -holdScope axi_mmio.r__#valid
+addSignal -h 15 -holdScope axi_mmio.rdata[63:0]
+addSignal -h 15 -holdScope axi_mmio.rready
+addSignal -h 15 -holdScope axi_mmio.w__#valid
+addSignal -h 15 -holdScope axi_mmio.wdata[63:0]
+addSignal -h 15 -holdScope axi_mmio.wready
+addSignal -h 15 -holdScope axi_mmio.wstrb[7:0]
+addSignal -h 15 -holdScope axi_uart_mm.ar__#len[7:0]
+addSignal -h 15 -holdScope axi_uart_mm.ar__#valid
+addSignal -h 15 -holdScope axi_uart_mm.araddr[31:0]
+addSignal -h 15 -holdScope axi_uart_mm.arid[4:0]
+addSignal -h 15 -holdScope axi_uart_mm.arready
+addSignal -h 15 -holdScope axi_uart_mm.aw__#len[7:0]
+addSignal -h 15 -holdScope axi_uart_mm.aw__#valid
+addSignal -h 15 -holdScope axi_uart_mm.awaddr[31:0]
+addSignal -h 15 -holdScope axi_uart_mm.awid[4:0]
+addSignal -h 15 -holdScope axi_uart_mm.awready
+addSignal -h 15 -holdScope axi_uart_mm.b__#valid
+addSignal -h 15 -holdScope axi_uart_mm.bready
+addSignal -h 15 -holdScope axi_uart_mm.r__#valid
+addSignal -h 15 -holdScope axi_uart_mm.rdata[31:0]
+addSignal -h 15 -holdScope axi_uart_mm.rready
+addSignal -h 15 -holdScope axi_uart_mm.w__#valid
+addSignal -h 15 -holdScope axi_uart_mm.wdata[31:0]
+addSignal -h 15 -holdScope axi_uart_mm.wready
+addSignal -h 15 -holdScope axi_uart_mm.wstrb[3:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.ar__#len[7:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.ar__#valid
+addSignal -h 15 -holdScope axi_xtor_extmem.araddr[31:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.arid[4:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.arready
+addSignal -h 15 -holdScope axi_xtor_extmem.aw__#len[7:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.aw__#valid
+addSignal -h 15 -holdScope axi_xtor_extmem.awaddr[31:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.awid[4:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.awready
+addSignal -h 15 -holdScope axi_xtor_extmem.b__#valid
+addSignal -h 15 -holdScope axi_xtor_extmem.bready
+addSignal -h 15 -holdScope axi_xtor_extmem.r__#valid
+addSignal -h 15 -holdScope axi_xtor_extmem.rdata[63:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.rready
+addSignal -h 15 -holdScope axi_xtor_extmem.w__#valid
+addSignal -h 15 -holdScope axi_xtor_extmem.wdata[63:0]
+addSignal -h 15 -holdScope axi_xtor_extmem.wready
+addSignal -h 15 -holdScope axi_xtor_extmem.wstrb[7:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.ar__#len[7:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.ar__#valid
+addSignal -h 15 -holdScope axi_xtor_mmio.araddr[31:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.arid[4:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.arready
+addSignal -h 15 -holdScope axi_xtor_mmio.aw__#len[7:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.aw__#valid
+addSignal -h 15 -holdScope axi_xtor_mmio.awaddr[31:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.awid[4:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.awready
+addSignal -h 15 -holdScope axi_xtor_mmio.b__#valid
+addSignal -h 15 -holdScope axi_xtor_mmio.bready
+addSignal -h 15 -holdScope axi_xtor_mmio.r__#valid
+addSignal -h 15 -holdScope axi_xtor_mmio.rdata[63:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.rready
+addSignal -h 15 -holdScope axi_xtor_mmio.w__#valid
+addSignal -h 15 -holdScope axi_xtor_mmio.wdata[63:0]
+addSignal -h 15 -holdScope axi_xtor_mmio.wready
+addSignal -h 15 -holdScope axi_xtor_mmio.wstrb[7:0]
+addSignal -h 15 -holdScope reset_sync
+addSignal -h 15 -holdScope sys_clk
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

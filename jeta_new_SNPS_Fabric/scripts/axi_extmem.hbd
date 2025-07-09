@@ -1,0 +1,127 @@
+#******************************************************************************
+#   $Id: //chipit/chipit/main/dev/systems/examples/xtor_riscv_soc/scripts/axi_extmem.hbd#2 $
+#   $Author: khertig $
+#   $DateTime: 2022/01/18 09:17:58 $
+#****************************************************************************** 
+
+# Create interface ports
+set AXI [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 AXI ]
+set_property -dict [ list \
+   CONFIG.ADDR_WIDTH {32} \
+   CONFIG.ARUSER_WIDTH {0} \
+   CONFIG.AWUSER_WIDTH {0} \
+   CONFIG.BUSER_WIDTH {0} \
+   CONFIG.CLK_DOMAIN {AXIS} \
+   CONFIG.DATA_WIDTH {64} \
+   CONFIG.HAS_BRESP {1} \
+   CONFIG.HAS_BURST {1} \
+   CONFIG.HAS_CACHE {0} \
+   CONFIG.HAS_LOCK {0} \
+   CONFIG.HAS_PROT {0} \
+   CONFIG.HAS_QOS {0} \
+   CONFIG.HAS_REGION {0} \
+   CONFIG.HAS_RRESP {1} \
+   CONFIG.HAS_WSTRB {1} \
+   CONFIG.ID_WIDTH {4} \
+   CONFIG.MAX_BURST_LENGTH {256} \
+   CONFIG.NUM_READ_OUTSTANDING {2} \
+   CONFIG.NUM_READ_THREADS {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {2} \
+   CONFIG.NUM_WRITE_THREADS {1} \
+   CONFIG.PROTOCOL {AXI4} \
+   CONFIG.READ_WRITE_MODE {READ_WRITE} \
+   CONFIG.RUSER_BITS_PER_BYTE {0} \
+   CONFIG.RUSER_WIDTH {0} \
+   CONFIG.SUPPORTS_NARROW_BURST {1} \
+   CONFIG.WUSER_BITS_PER_BYTE {0} \
+   CONFIG.WUSER_WIDTH {0} \
+   ] $AXI
+set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 DDR ]
+set_property -dict [ list \
+   CONFIG.ADDR_WIDTH {32} \
+   CONFIG.CLK_DOMAIN {AXIM} \
+   CONFIG.DATA_WIDTH {64} \
+   CONFIG.HAS_CACHE {0} \
+   CONFIG.HAS_LOCK {0} \
+   CONFIG.HAS_PROT {0} \
+   CONFIG.HAS_QOS {0} \
+   CONFIG.NUM_READ_OUTSTANDING {2} \
+   CONFIG.NUM_WRITE_OUTSTANDING {2} \
+   CONFIG.PROTOCOL {AXI4} \
+   ] $DDR
+set XTOR_AXI [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 XTOR_AXI ]
+set_property -dict [ list \
+   CONFIG.ADDR_WIDTH {32} \
+   CONFIG.ARUSER_WIDTH {0} \
+   CONFIG.AWUSER_WIDTH {0} \
+   CONFIG.BUSER_WIDTH {0} \
+   CONFIG.CLK_DOMAIN {AXIS} \
+   CONFIG.DATA_WIDTH {64} \
+   CONFIG.HAS_BRESP {1} \
+   CONFIG.HAS_BURST {1} \
+   CONFIG.HAS_CACHE {1} \
+   CONFIG.HAS_LOCK {1} \
+   CONFIG.HAS_PROT {1} \
+   CONFIG.HAS_QOS {1} \
+   CONFIG.HAS_REGION {0} \
+   CONFIG.HAS_RRESP {1} \
+   CONFIG.HAS_WSTRB {1} \
+   CONFIG.ID_WIDTH {1} \
+   CONFIG.MAX_BURST_LENGTH {256} \
+   CONFIG.NUM_READ_OUTSTANDING {2} \
+   CONFIG.NUM_READ_THREADS {1} \
+   CONFIG.NUM_WRITE_OUTSTANDING {2} \
+   CONFIG.NUM_WRITE_THREADS {1} \
+   CONFIG.PROTOCOL {AXI4} \
+   CONFIG.READ_WRITE_MODE {READ_WRITE} \
+   CONFIG.RUSER_BITS_PER_BYTE {0} \
+   CONFIG.RUSER_WIDTH {0} \
+   CONFIG.SUPPORTS_NARROW_BURST {1} \
+   CONFIG.WUSER_BITS_PER_BYTE {0} \
+   CONFIG.WUSER_WIDTH {0} \
+   ] $XTOR_AXI
+
+# Create ports
+set M_ACLK [ create_bd_port -dir I -type clk M_ACLK ]
+set_property -dict [ list \
+   CONFIG.ASSOCIATED_BUSIF {DDR} \
+   CONFIG.CLK_DOMAIN {AXIM} \
+ ] $M_ACLK
+set M_ARESETN [ create_bd_port -dir I -type rst M_ARESETN ]
+set S_ACLK [ create_bd_port -dir I -type clk S_ACLK ]
+set_property -dict [ list \
+   CONFIG.ASSOCIATED_BUSIF {AXI:XTOR_AXI} \
+   CONFIG.ASSOCIATED_RESET {S_RESETN} \
+   CONFIG.CLK_DOMAIN {AXIS} \
+ ] $S_ACLK
+set S_RESETN [ create_bd_port -dir I -type rst S_RESETN ]
+set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_LOW} \
+ ] $S_RESETN
+
+# Create instance: axi_interconnect_extmem, and set properties
+set axi_interconnect_extmem [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect axi_interconnect_extmem ]
+set_property -dict [ list \
+   CONFIG.ENABLE_ADVANCED_OPTIONS {1} \
+   CONFIG.NUM_MI {1} \
+   CONFIG.NUM_SI {2} \
+   CONFIG.S00_HAS_DATA_FIFO {0} \
+   CONFIG.S01_HAS_DATA_FIFO {0} \
+   CONFIG.SYNCHRONIZATION_STAGES {8} \
+   CONFIG.XBAR_DATA_WIDTH {64} \
+ ] $axi_interconnect_extmem
+
+# Create interface connections
+connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_ports AXI] [get_bd_intf_pins axi_interconnect_extmem/S00_AXI]
+connect_bd_intf_net -intf_net S01_AXI_1 [get_bd_intf_ports XTOR_AXI] [get_bd_intf_pins axi_interconnect_extmem/S01_AXI]
+connect_bd_intf_net -intf_net axi_interconnect_extmem_M00_AXI [get_bd_intf_ports DDR] [get_bd_intf_pins axi_interconnect_extmem/M00_AXI]
+
+# Create port connections
+connect_bd_net -net M01_ACLK_1 [get_bd_ports M_ACLK] [get_bd_pins axi_interconnect_extmem/ACLK] [get_bd_pins axi_interconnect_extmem/M00_ACLK]
+connect_bd_net -net M01_ARESETN_1 [get_bd_ports M_ARESETN] [get_bd_pins axi_interconnect_extmem/ARESETN] [get_bd_pins axi_interconnect_extmem/M00_ARESETN]
+connect_bd_net -net clk_1 [get_bd_ports S_ACLK] [get_bd_pins axi_interconnect_extmem/S00_ACLK] [get_bd_pins axi_interconnect_extmem/S01_ACLK]
+connect_bd_net -net resetn_1 [get_bd_ports S_RESETN] [get_bd_pins axi_interconnect_extmem/S00_ARESETN] [get_bd_pins axi_interconnect_extmem/S01_ARESETN]
+
+# Create address segments
+create_bd_addr_seg -range 0x80000000 -offset 0x80000000 [get_bd_addr_spaces AXI] [get_bd_addr_segs DDR/Reg] SEG_DDR_Reg
+create_bd_addr_seg -range 0x80000000 -offset 0x80000000 [get_bd_addr_spaces XTOR_AXI] [get_bd_addr_segs DDR/Reg] SEG_DDR_Reg

@@ -1,0 +1,7 @@
+// Virtual UART used only in HAPS100
+-sverilog
+${HAPS_PRJ_DIR}/rtl/umr3_virtual_uart/umr3_virtual_uart_defines.sv
+${HAPS_PRJ_DIR}/rtl/umr3_virtual_uart/umr3_virtual_uart_tx.sv
+${HAPS_PRJ_DIR}/rtl/umr3_virtual_uart/umr3_virtual_uart_rx.sv
+${HAPS_PRJ_DIR}/rtl/umr3_virtual_uart/umr3_virtual_uart_top.sv
+${HAPS_PRJ_DIR}/rtl/umr3_virtual_uart/umr3_virtual_uart_undef.sv

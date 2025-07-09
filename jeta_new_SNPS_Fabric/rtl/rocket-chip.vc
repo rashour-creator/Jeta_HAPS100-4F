@@ -1,0 +1,10 @@
+-sverilog
+${HAPS_PRJ_DIR}/rtl/rocket-chip/${FULL_SOC}_core/freechips.rocketchip.system.HAPSConfig.impl_srams.v
+${HAPS_PRJ_DIR}/rtl/rocket-chip/${FULL_SOC}_core/freechips.rocketchip.system.HAPSConfig.v
+${HAPS_PRJ_DIR}/rtl/rocket-chip/vsrc/AsyncResetReg.v  
+${HAPS_PRJ_DIR}/rtl/rocket-chip/vsrc/plusarg_reader.v  
+${HAPS_PRJ_DIR}/rtl/src/axi_pkg.sv
+${HAPS_PRJ_DIR}/rtl/src/reset_sync_inv.sv  
+${HAPS_PRJ_DIR}/rtl/src/counter.sv 
+${HAPS_PRJ_DIR}/rtl/src/haps_jtag_vpi.v
+${HAPS_PRJ_DIR}/rtl/src/haps_soc.sv
